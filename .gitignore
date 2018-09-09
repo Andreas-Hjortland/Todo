@@ -1,0 +1,12 @@
+.DS_Store
+.vs/
+.vscode/
+bin/
+obj/
+dist/
+node_modules/
+src/AcosTodo.Web/wwwroot/
+
+*.bk
+*.user
+*.swp
