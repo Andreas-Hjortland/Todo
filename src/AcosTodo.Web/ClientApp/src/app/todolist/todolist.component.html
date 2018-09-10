@@ -1,0 +1,29 @@
+<p>
+  <strong>Show only the following items:</strong>&nbsp;
+  <button class="btn {{ mode === 'all' ? 'btn-primary' : 'btn-light' }}" (click)="show('all')">All</button>
+  <button class="btn {{ mode === 'uncompleted' ? 'btn-primary' : 'btn-light' }}" (click)="show('uncompleted')">Uncompleted</button>
+  <button class="btn {{ mode === 'completed' ? 'btn-primary' : 'btn-light' }}" (click)="show('completed')">Completed</button>
+</p>
+<p>
+  <strong>Show only the following tags:</strong>&nbsp;
+  <button class="btn {{ filterTags.indexOf(tag) >= 0 ? 'btn-primary' : 'btn-light' }}" *ngFor="let tag of tags" (click)="toggleTag(tag)">{{ tag }}</button>
+</p>
+<ul class="list-group">
+  <li class="list-group-item" *ngFor="let item of items">
+    <div class="item-container">
+      <div class="item-container__checkbox">
+        <i (click)="toggleCompleted(item.id)" *ngIf="item.completed" class="fas fa-check-circle"></i>
+        <i (click)="toggleCompleted(item.id)" *ngIf="!item.completed" class="fas fa-circle"></i>
+      </div>
+      <div class="item-container__content">
+        <div class="d-flex w-100 justify-content-between">
+          <h5 class="mb-1">{{ item.title }}</h5>
+          <small *ngIf="item.completed" class="hidden-xs">{{ item.completed }}</small>
+          <small *ngIf="!item.completed" class="hidden-xs">{{ item.created }}</small>
+        </div>
+        <p class="mb-1">{{ item.description }}</p>
+        <small><strong>Tags:</strong> {{ "'" + item.tags.join("', '") + "'" }}</small>
+      </div>
+    </div>
+  </li>
+</ul>

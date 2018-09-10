@@ -1,0 +1,20 @@
+Need an account? <a routerLink="/register">Register new user</a>
+<hr/>
+<form (ngSubmit)="onSubmit()" #loginForm="ngForm">
+  <div class="form-group" (ngSubmit)="onSubmit()">
+    <label for="username">Username / email</label>
+    <input
+      [(ngModel)]="model.username"
+      type="text"
+      class="form-control"
+      id="username"
+      name="username"
+      placeholder="Enter username or email - either one is fine"
+      required>
+  </div>
+  <div class="form-group">
+    <label for="password">Password</label>
+    <input [(ngModel)]="model.password" type="password" class="form-control" id="password" name="password" placeholder="Password" required>
+  </div>
+  <button type="submit" [disabled]="!loginForm.form.valid" class="btn btn-primary">Submit</button>
+</form>

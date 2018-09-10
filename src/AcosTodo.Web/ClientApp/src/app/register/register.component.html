@@ -1,0 +1,22 @@
+Already have account? <a routerLink="/login">Go to login</a>
+<hr/>
+<form>
+<form (ngSubmit)="onSubmit()" #registerForm="ngForm">
+  <div class="form-group">
+    <label for="username">Username</label>
+    <input type="text" class="form-control" id="username" name="username" placeholder="johndoe">
+  </div>
+  <div class="form-group">
+    <label for="email">Email</label>
+    <input type="text" class="form-control" id="email" name="email" placeholder="john@example.com">
+  </div>
+  <div class="form-group">
+    <label for="password">Password</label>
+    <input type="password" class="form-control" id="password" name="password" placeholder="Password">
+  </div>
+  <div class="form-group">
+    <label for="about">About me</label>
+    <textarea class="form-control" id="about" name="about" placeholder="Write a short description of yourself if you wish"></textarea>
+  </div>
+  <button type="submit" [disabled]="!registerForm.form.valid" class="btn btn-primary">Submit</button>
+</form>

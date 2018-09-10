@@ -1,0 +1,7 @@
+<table class="table table-striped table-hover">
+  <tr *ngFor="let user of users">
+    <td><a routerLink="/todo/{{user.id}}">{{user.username}}</a></td>
+    <td>{{user.email}}</td>
+    <td>{{user.about}}</td>
+  </tr>
+</table>

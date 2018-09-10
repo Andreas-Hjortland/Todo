@@ -1,0 +1,20 @@
+.navbar {
+  margin-bottom: 1em;
+}
+
+.ng-invalid:not(.ng-pristine) {
+  border-color: #dc3545;
+}
+
+.ng-invalid:not(.ng-pristine):focus {
+  border-color: #dc3545;
+  box-shadow: 0 0 0 .2rem rgba(220,53,69,.25);
+}
+
+.ng-valid[required], .ng-valid.required  {
+  border-left: 5px solid #42A948; /* green */
+}
+
+.ng-invalid:not(form)  {
+  border-left: 5px solid #a94442; /* red */
+}
